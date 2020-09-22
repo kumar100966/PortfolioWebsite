@@ -23,6 +23,12 @@
     --fs-h2: 2.25rem; 
     --fs-h3: 1.25rem; 
     --fs-body: 1rem; 
+
+    /* box shadow */
+
+    --bs:   0.25em 0.25em 0.75em rgba(0,0,0,.25),
+            0.125em 0.125em 0.25em rgba(0,0,0,.15); 
+
 }
 
 /* Only implement styles if supported by browser, is a screen(screen, print, speech) media 
@@ -98,6 +104,7 @@ h3{ font-size: var(--fs-h3); }
 .section__subtitle--intro,
 .section__subtitle--about{
     background: var(--clr-accent); 
+    padding: .25em 1em; 
     font-family: var(--ff-secondary); 
     margin-bottom: 1em;
 }
@@ -107,14 +114,47 @@ nav{display:none}
 /* Intro Section */
 
 .intro{
+    position: relative;
 
+}
+
+.intro__img{
+    box-shadow: var(--bs);
 }
 
 @media only screen and (min-width:600px){
     .intro{
         display: grid; 
+        width: min-content;
+        margin: 0 auto;
+        column-gap: 1em;
         grid-template-areas: 
-            
-
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
     }
+
+    .intro__img{
+        grid-area: img; 
+        min-width: 280px;
+        position: relative;
+        /* Layer the image above the subtitle element */
+        z-index: 2;
+    }
+
+    .section__subtitle--intro{
+        /* To ensure that the text stays at the top of the
+        element. */
+        align-self: flex-start;
+        /* Span across all columns */
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        /* Span 1.5 em to the left of the relative position */
+        left: -1.5em;
+        /* In order to span the parent section span 100 percent of the parent + 1.5 em to offset the shift to the left position */
+        width: calc(100% + 1.5em);
+    }
+
 }
