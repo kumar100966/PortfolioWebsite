@@ -67,6 +67,38 @@ img{
     max-width: 100%;
 }
 
+
+:focus{
+    /* Add a outline to an element
+    Outline does not contribute to element dimension
+    Outline overlaps content */
+    outline: 3px solid var(--clr-accent); 
+    outline-offset: 3px;
+}
+
+.btn {
+    display: inline-block; 
+    padding: .5em 2.5em; 
+    background: var(--clr-accent);
+    /* To remove underline */
+    text-decoration: none;
+    /* Change in cursor */
+    cursor: pointer;
+    font-size: .8rem; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    /* Use to apply transition to sepcific css property 
+    Have to indicate how to slow the transition of element state
+    Indicate how the speed is distributed */
+    transition: transform 200ms ease-in-out; 
+}
+
+.btn:hover{
+    /* 2D animation that scales btn when mouse is over element */
+    transform: scale(1.1);
+}
+
 strong{ font-weight: var(--fw-bold)}
 
 /* Typography */
@@ -190,6 +222,34 @@ nav{display:none}
     height: 1px;
     margin: 0.5em auto 1em;
     /* currentColor of the actual element */
-    background: currentColor; 
+    background: var(--clr-light); 
+    /* To set transparency */
+    opacity: 0.5;
 
+}
+
+.services{
+    margin-bottom: 4em; 
+}
+
+.service{
+    /* Use pixels when dealing with max and min width */
+    max-width: 500px;
+    margin: 0 auto; 
+}
+
+@media only screen and (min-width: 800px){
+    .services{
+        display: flex; 
+        max-width: 1000px;
+        /* Did not use shorthand for margin so that 
+        margin bottom is not overwritten */
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    /* Access all service content succeeding another service content */
+    .service + .service{
+        margin-left: 2em; 
+    }
 }
