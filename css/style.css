@@ -245,13 +245,13 @@ nav{display:none}
 .service{
     /* Use pixels when dealing with max and min width */
     max-width: 500px;
-    margin: 0 auto; 
+    margin: 3em auto; 
 }
 
 @media only screen and (min-width: 800px){
     .services{
         display: flex; 
-        max-width: 2000px;
+        max-width: 1500px;
         /* Did not use shorthand for margin so that 
         margin bottom is not overwritten */
         margin-left: auto; 
