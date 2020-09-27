@@ -435,6 +435,13 @@ nav{display:none}
 }
 
 
+@media only screen and (max-width: 400px){
+    .proposal__frame{
+        width: 15em;
+    }
+}
+
+
 @media only screen and (min-width: 800px){
     .proposal__frame{
         min-height: 800px;
