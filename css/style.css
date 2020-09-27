@@ -346,7 +346,7 @@ nav{display:none}
         repeat(auto-fit, minmax(min-content, fr));  */
     margin: 0 auto; 
     /* Resize the div containing the image and not the image itself */
-    max-width: 800px;
+    max-width: 500px;
 }
 
 .portfolio__item{
@@ -428,15 +428,17 @@ nav{display:none}
 }
 
 .proposal__frame{
-    height: 500px;
-    width: 400px;
+    position: relative;
+    display: block;
+    min-height: 25em;
+    margin: 0 auto;
 }
 
 
 @media only screen and (min-width: 800px){
     .proposal__frame{
-        height: 800px;
-        width: 800px;
+        min-height: 800px;
+        min-width: 800px;
     }
 }
 
