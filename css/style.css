@@ -340,10 +340,14 @@ nav{display:none}
     margin-bottom: 1em;
 }
 
-/* .portfolio{
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-} */
+.portfolio{
+    display: relative; 
+    /* grid-template-columns: min-content;
+        repeat(auto-fit, minmax(min-content, fr));  */
+    margin: 0 auto; 
+    /* Resize the div containing the image and not the image itself */
+    max-width: 800px;
+}
 
 .portfolio__item{
     background: var(--clr-accent); 
@@ -353,9 +357,7 @@ nav{display:none}
 .portfolio__img{
     transition: 
         transform 750ms cubic-bezier(.5, 0, .5, 1), 
-        opacity 250ms linear; 
-    height:300px;
-    width: 400px;
+        opacity 250ms linear;
 }
 
 .portfolio__item:focus{
